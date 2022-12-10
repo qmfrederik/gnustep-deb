@@ -1,0 +1,23 @@
+Source: libdispatch
+Priority: optional
+Maintainer: Frederik Carlier <frederik.carlier@keysight.com>
+Build-Depends: debhelper-compat (= 13), clang, cmake, libstdc++-11-dev
+Standards-Version: 4.6.0
+Section: libs
+Homepage: https://github.com/apple/swift-corelibs-libdispatch
+Rules-Requires-Root: no
+
+Package: libdispatch-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libdispatch0 (= ${binary:Version}), ${misc:Depends}
+Description: Grand Central Dispatch
+ The libdispatch Project, (a.k.a. Grand Central Dispatch), for concurrency on multicore hardware
+
+Package: libdispatch0
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Grand Central Dispatch
+ The libdispatch Project, (a.k.a. Grand Central Dispatch), for concurrency on multicore hardware

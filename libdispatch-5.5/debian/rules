@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export CXXFLAGS=-std=c++11
+export CFLAGS=-Wno-error=unused-but-set-variable
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_C_COMPILER=clang \
+		-DCMAKE_CXX_COMPILER=clang++ \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DBUILD_TESTING=OFF
+
+%:
+	dh $@

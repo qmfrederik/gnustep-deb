@@ -1,0 +1,11 @@
+libdispatch*
+!libdispatch-5.5
+libdispatch-5.5/*
+!libdispatch-5.5/debian/
+libdispatch-5.5/debian/libdispatch0
+libdispatch-5.5/debian/libdispatch-dev
+
+.debhelper/
+tmp/
+*.log
+debhelper-build-stamp
