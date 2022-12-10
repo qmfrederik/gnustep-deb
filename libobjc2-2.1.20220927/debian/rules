@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+export CXXFLAGS=-std=c++11
+
+override_dh_auto_configure:
+	mkdir third_party/robin-map/include/
+	ln -s /usr/include/tsl/ third_party/robin-map/include/
+	dh_auto_configure -- \
+		-DCMAKE_C_COMPILER=clang \
+		-DCMAKE_CXX_COMPILER=clang++ \
+		-DGNUSTEP_INSTALL_TYPE=NONE \
+		-DTESTS=OFF
+
+override_dh_dwz:
+	dh_dwz || true
+
+%:
+	dh $@

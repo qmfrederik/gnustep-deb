@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libobjc2
+Upstream-Contact: GNUstep project
+Source: https://github.com/gnustep/libobjc2
+
+Files: *
+Copyright: Copyright (c) David Chisnall
+License: MIT

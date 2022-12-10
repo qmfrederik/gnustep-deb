@@ -5,7 +5,17 @@ libdispatch-5.5/*
 libdispatch-5.5/debian/libdispatch0
 libdispatch-5.5/debian/libdispatch-dev
 
+libobjc2*
+!libobjc2-2.1.20220927
+libobjc2-2.1.20220927/*
+!libobjc2-2.1.20220927/debian/
+!libobjc2-2.1.20220927/debian/libobjc2*
+libobjc2-2.1.20220927/debian/libobjc2/
+libobjc2-2.1.20220927/debian/libobjc2-dev/
+
 .debhelper/
 tmp/
 *.log
 debhelper-build-stamp
+*.substvars
+files

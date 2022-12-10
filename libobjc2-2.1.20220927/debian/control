@@ -1,0 +1,23 @@
+Source: libobjc2
+Priority: optional
+Maintainer: Frederik Carlier <frederik.carlier@keysight.com>
+Build-Depends: debhelper-compat (= 13), clang, cmake, libstdc++-11-dev, robin-map-dev
+Standards-Version: 4.6.0
+Section: libs
+Homepage: https://github.com/gnustep/libobjc2
+Rules-Requires-Root: no
+
+Package: libobjc2-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libobjc20 (= ${binary:Version}), ${misc:Depends}
+Description: Objective-C runtime
+ Objective-C runtime library intended for use with Clang.
+
+Package: libobjc2
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Objective-C runtime
+ Objective-C runtime library intended for use with Clang.

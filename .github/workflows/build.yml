@@ -8,6 +8,16 @@ jobs:
     container:
       image: ubuntu:22.04
 
+    strategy:
+      matrix:
+        include:
+          - library: libdispatch-5.5
+            download: https://github.com/apple/swift-corelibs-libdispatch/archive/refs/tags/swift-5.5-RELEASE.tar.gz
+            orig: libdispatch_5.5
+          - library: libobjc2-2.1.20220927
+            download: https://github.com/gnustep/libobjc2/archive/35ac9bc072e652e8bac9cd501f94d3b089b8f9a2.tar.gz
+            orig: libobjc2_2.1.20220927
+
     steps:
     - uses: actions/checkout@v3
 
@@ -18,18 +28,18 @@ jobs:
 
     - name: Download sources
       run: |
-        wget -nc https://github.com/apple/swift-corelibs-libdispatch/archive/refs/tags/swift-5.5-RELEASE.tar.gz -O libdispatch_5.5.orig.tar.gz
+        wget -nc ${{ matrix.download }} -O ${{ matrix.orig }}.orig.tar.gz
 
     - name: Install build dependencies
-      working-directory: libdispatch-5.5/
+      working-directory: ${{ matrix.library }}/
       run: |
         mk-build-deps -i -t "apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y"
         rm -f *.deb *.buildinfo *.changes
 
     - name: Build packages
-      working-directory: libdispatch-5.5/
+      working-directory: ${{ matrix.library }}/
       run: |
-        tar -xvzf ../libdispatch_5.5.orig.tar.gz --strip-components=1
+        tar -xvzf ../${{ matrix.orig }}.orig.tar.gz --strip-components=1
         debuild
 
     - name: Upload packages
