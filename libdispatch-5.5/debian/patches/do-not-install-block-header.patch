@@ -1,0 +1,22 @@
+Description: libobjc2 provides it
+ This gives a conflict, so mirror what nextspace is doing.
+ .
+ libdispatch (5.5-1) unstable; urgency=medium
+ .
+   * Non-maintainer upload.
+Author: Patrick Georgi <patrick@georgi.software>
+
+---
+Last-Update: 2022-12-11
+
+--- libdispatch-5.5.orig/src/BlocksRuntime/CMakeLists.txt
++++ libdispatch-5.5/src/BlocksRuntime/CMakeLists.txt
+@@ -24,8 +24,6 @@ set_target_properties(BlocksRuntime PROPERTIES
+ 
+ add_library(BlocksRuntime::BlocksRuntime ALIAS BlocksRuntime)
+ 
+-install(FILES Block.h
+-        DESTINATION ${INSTALL_BLOCK_HEADERS_DIR})
+ if(INSTALL_PRIVATE_HEADERS)
+   install(FILES Block_private.h
+           DESTINATION ${INSTALL_BLOCK_HEADERS_DIR})
