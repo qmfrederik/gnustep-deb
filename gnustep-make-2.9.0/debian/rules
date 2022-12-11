@@ -3,6 +3,13 @@ export RUNTIME_VERSION=gnustep-2.1
 export CC=clang
 export CXX=clang++
 
+# Reset all flags because dpkg's default buildflags propagate and
+# become hardcoded in gnustep-make as GNUstep's build system, which is
+# clearly undesirable (Bug#879085).
+export CFLAGS=-g -O2
+export OBJCFLAGS=
+export CXXFLAGS=-g -O2
+
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		--prefix=/usr \
