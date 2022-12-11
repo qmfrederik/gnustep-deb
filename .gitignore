@@ -13,6 +13,13 @@ libobjc2-2.1.20220927/*
 libobjc2-2.1.20220927/debian/libobjc2/
 libobjc2-2.1.20220927/debian/libobjc2-dev/
 
+gnustep-make*
+!gnustep-make-2.9.0
+gnustep-make-2.9.0/*
+!gnustep-make-2.9.0/debian/
+!gnustep-make-2.9.0/debian/gnustep-make*
+gnustep-make-2.9.0/debian/gnustep-make/
+
 .debhelper/
 tmp/
 *.log

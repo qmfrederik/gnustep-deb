@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: tools-make
+Upstream-Contact: GNUstep Authors
+Source: https://github.com/gnustep/tools-make
+
+Files: *
+Copyright: Copyright (C) Free Software Foundation, Inc.
+License: GPL-3.0

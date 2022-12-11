@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+export RUNTIME_VERSION=gnustep-2.1
+export CC=clang
+export CXX=clang++
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--prefix=/usr \
+		--enable-native-objc-exceptions \
+		--enable-objc-arc \
+		--enable-install-ld-so-conf \
+		--with-library-combo=ng-gnu-gnu \
+
+%:
+	dh $@
