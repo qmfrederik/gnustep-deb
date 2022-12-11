@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libs-base
+Upstream-Contact: GNUstep Authors
+Source: https://github.com/gnustep/libs-base
+
+Files: *
+Copyright: Copyright (C) Free Software Foundation, Inc.
+License: LGPL-2.0

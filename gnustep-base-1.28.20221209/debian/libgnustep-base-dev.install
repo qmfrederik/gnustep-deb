@@ -1,0 +1,5 @@
+usr/include/Foundation/
+usr/include/GNUstepBase/
+usr/lib/GNUstep/DTDs/
+usr/lib/libgnustep-base.so
+usr/share/GNUstep/Makefiles/

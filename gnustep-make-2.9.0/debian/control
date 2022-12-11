@@ -1,7 +1,7 @@
 Source: gnustep-make
 Priority: optional
 Maintainer: Frederik Carlier <frederik.carlier@keysight.com>
-Build-Depends: debhelper-compat (= 13), clang, cmake, pkg-config
+Build-Depends: debhelper-compat (= 13), clang, cmake, pkg-config, autotools-dev
 Standards-Version: 4.6.0
 Section: libs
 Homepage: https://github.com/gnustep/tools-make
@@ -13,7 +13,6 @@ Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          libobjc2-dev,
-         libdispatch-dev,
-         autotools-dev
+         libdispatch-dev
 Description: GNUstep makefile package
  The makefile package is a simple, powerful and extensible way to write makefiles for a GNUstep-based project.

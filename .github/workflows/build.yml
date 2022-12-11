@@ -96,7 +96,69 @@ jobs:
       working-directory: ${{ matrix.library }}/
       run: |
         tar -xvzf ../${{ matrix.orig }}.orig.tar.gz --strip-components=1
-        debuild
+        DEB_BUILD_OPTIONS=nocheck debuild
+
+    - name: Upload packages
+      uses: actions/upload-artifact@v3
+      with:
+        name: debian
+        path: |
+          *.deb
+          *.dsc
+
+  gnustep-base:
+    needs: gnustep-make
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: ubuntu:22.04
+
+    strategy:
+      matrix:
+        include:
+          - library: gnustep-base-1.28.20221209
+            download: https://github.com/gnustep/libs-base/archive/91108c69c3fbc4f6a71497966c4bab0461265d1b.tar.gz
+            orig: gnustep-base_1.28.20221209
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/download-artifact@v3
+      with:
+        name: debian
+        
+    - name: Install dependencies
+      run: |
+        dpkg -i libdispatch0_5.5-1_amd64.deb
+        dpkg -i libdispatch-dev_5.5-1_amd64.deb
+        dpkg -i libobjc2_2.1.20220927-1_amd64.deb
+        dpkg -i libobjc2-dev_2.1.20220927-1_amd64.deb
+        dpkg -i gnustep-make_2.9.0-1_amd64.deb
+
+        apt-get update
+        apt-get install -y devscripts wget equivs
+
+    - name: Download sources
+      run: |
+        wget -nc ${{ matrix.download }} -O ${{ matrix.orig }}.orig.tar.gz
+
+    - name: Install build dependencies
+      working-directory: ${{ matrix.library }}/
+      run: |
+        mk-build-deps -i -t "apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y"
+        rm -f *.deb *.buildinfo *.changes
+
+    - name: pkg-config diagnostics
+      run: |
+        pkg-config --variable pc_path pkg-config
+        ls -l /usr/lib/x86_64-linux-gnu/pkgconfig/
+
+    - name: Build packages
+      working-directory: ${{ matrix.library }}/
+      run: |
+        tar -xvzf ../${{ matrix.orig }}.orig.tar.gz --strip-components=1
+        DEB_BUILD_OPTIONS=nocheck debuild
 
     - name: Upload packages
       uses: actions/upload-artifact@v3

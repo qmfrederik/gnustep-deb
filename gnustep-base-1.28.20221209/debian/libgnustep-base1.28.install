@@ -1,0 +1,5 @@
+usr/bin/
+usr/lib/GNUstep/Libraries/gnustep-base/
+usr/share/man/man1/
+usr/share/man/man8/
+usr/lib/libgnustep-base.so.*
