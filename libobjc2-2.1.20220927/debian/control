@@ -11,7 +11,7 @@ Package: libobjc2-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: libobjc20 (= ${binary:Version}), ${misc:Depends}
+Depends: libobjc2 (= ${binary:Version}), ${misc:Depends}
 Description: Objective-C runtime
  Objective-C runtime library intended for use with Clang.
 
