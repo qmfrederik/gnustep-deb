@@ -105,7 +105,7 @@ jobs:
       working-directory: ${{ matrix.library }}/
       run: |
         tar -xvzf ../${{ matrix.orig }}.orig.tar.gz --strip-components=1
-        DEB_BUILD_OPTIONS=nocheck debuild
+        debuild
 
     - name: Upload packages
       uses: actions/upload-artifact@v3
@@ -250,7 +250,7 @@ jobs:
       working-directory: ${{ matrix.library }}/
       run: |
         tar -xvzf ../${{ matrix.orig }}.orig.tar.gz --strip-components=1
-        DEB_BUILD_OPTIONS=nocheck debuild
+        debuild
 
     - name: Upload packages
       uses: actions/upload-artifact@v3

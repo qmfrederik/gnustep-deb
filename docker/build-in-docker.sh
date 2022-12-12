@@ -27,8 +27,8 @@ dpkg -i libobjc2-dev_2.1.20220927-1_amd64.deb
 cd gnustep-make-2.9.0 && git clean -xfd . && tar -xvzf ../gnustep-make_2.9.0.orig.tar.gz --strip-components=1 && debuild -us -uc && cd ..
 dpkg -i gnustep-make_2.9.0-1_amd64.deb
 
-cd gnustep-base-1.28.20221209 && git clean -xfd . && tar -xvzf ../gnustep-base_1.28.20221209.orig.tar.gz --strip-components=1 && DEB_BUILD_OPTIONS=nocheck debuild -us -uc && cd ..
+cd gnustep-base-1.28.20221209 && git clean -xfd . && tar -xvzf ../gnustep-base_1.28.20221209.orig.tar.gz --strip-components=1 && debuild -us -uc && cd ..
 dpkg -i libgnustep-base1.28_1.28.20221209-1_amd64.deb
 dpkg -i libgnustep-base-dev_1.28.20221209-1_amd64.deb
 
-cd gnustep-gui-0.29.20221128 && git clean -xfd . && tar -xvzf ../gnustep-gui_0.29.20221128.orig.tar.gz --strip-components=1 && DEB_BUILD_OPTIONS=nocheck debuild -us -uc && cd ..
+cd gnustep-gui-0.29.20221128 && git clean -xfd . && tar -xvzf ../gnustep-gui_0.29.20221128.orig.tar.gz --strip-components=1 && debuild -us -uc && cd ..
