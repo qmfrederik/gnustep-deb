@@ -55,6 +55,7 @@ jobs:
         name: sources
         path: |
           *.orig.tar.gz
+          *.diff.gz
           *.debian.tar.xz
           *.dsc
 
@@ -119,6 +120,7 @@ jobs:
         name: sources
         path: |
           *.orig.tar.gz
+          *.diff.gz
           *.debian.tar.xz
           *.dsc
 
@@ -189,6 +191,7 @@ jobs:
         name: sources
         path: |
           *.orig.tar.gz
+          *.diff.gz
           *.debian.tar.xz
           *.dsc
 
@@ -262,5 +265,6 @@ jobs:
         name: sources
         path: |
           *.orig.tar.gz
+          *.diff.gz
           *.debian.tar.xz
           *.dsc
