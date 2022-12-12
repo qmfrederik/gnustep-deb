@@ -4,6 +4,7 @@ Maintainer: Frederik Carlier <frederik.carlier@keysight.com>
 Build-Depends: debhelper-compat (= 13),
                clang,
                pkg-config,
+               gnustep-make,
                libstdc++-11-dev,
                libxml2-dev,
                libgnutls28-dev,
