@@ -28,9 +28,25 @@ gnustep-base-1.28.20221209/*
 gnustep-base-1.28.20221209/debian/libgnustep-base-dev/
 gnustep-base-1.28.20221209/debian/libgnustep-base1.28/
 
+gnustep-gui-0.29.20221128*
+!gnustep-gui-0.29.20221128
+gnustep-gui-0.29.20221128/*
+!gnustep-gui-0.29.20221128/debian/
+!gnustep-gui-0.29.20221128/debian/gnustep-make*
+gnustep-gui-0.29.20221128/debian/libgnustep-gui-dev/
+gnustep-gui-0.29.20221128/debian/libgnustep-gui0.29/
+
 .debhelper/
 tmp/
 *.log
 debhelper-build-stamp
 *.substvars
 files
+*.build
+*.buildinfo
+*.changes
+*.tar.gz
+*.dsc
+*.deb
+*.tar.xz
+*.ddeb

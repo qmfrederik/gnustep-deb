@@ -1,0 +1,34 @@
+Source: gnustep-gui
+Priority: optional
+Maintainer: Frederik Carlier <frederik.carlier@keysight.com>
+Build-Depends: debhelper-compat (= 13),
+               clang,
+               pkg-config,
+               libgnustep-base-dev,
+               libjpeg-dev,
+               libtiff-dev
+Standards-Version: 4.6.0
+Section: libs
+Homepage: https://github.com/gnustep/libs-gui/
+Rules-Requires-Root: no
+
+Package: libgnustep-gui-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libgnustep-gui0.29 (= ${binary:Version}), ${misc:Depends}
+Description: A library of graphical user interface classes written completely in the Objective-C language.
+ The GNUstep gui library is a library of graphical user interface classes written completely in the Objective-C language;
+ the classes are based upon Apple's Cocoa framework (which came from the OpenStep specification).
+
+Package: libgnustep-gui0.29
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+         libgnustep-base1.28,
+         libjpeg8,
+         libtiff5
+Description: A library of graphical user interface classes written completely in the Objective-C language.
+ The GNUstep gui library is a library of graphical user interface classes written completely in the Objective-C language;
+ the classes are based upon Apple's Cocoa framework (which came from the OpenStep specification).

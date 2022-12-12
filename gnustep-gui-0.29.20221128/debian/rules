@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+# include /usr/share/GNUstep/Makefiles/config.make
+
+export CC=clang
+export CXX=clang++
+export LDFLAGS=-L/usr/lib/x86_64-linux-gnu
+
+override_dh_autoreconf:
+
+override_dh_dwz:
+	dh_dwz || true
+
+%:
+	dh $@

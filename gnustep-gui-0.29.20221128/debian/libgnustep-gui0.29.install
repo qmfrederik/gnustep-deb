@@ -1,0 +1,10 @@
+usr/bin/
+usr/lib/GNUstep/Sounds/
+usr/lib/GNUstep/Images/
+usr/lib/GNUstep/KeyBindings/
+usr/lib/GNUstep/ColorPickers/
+usr/lib/GNUstep/Bundles/
+usr/lib/GNUstep/PostScript/
+usr/lib/GNUstep/Services/
+usr/lib/GNUstep/Libraries/gnustep-gui/
+usr/lib/libgnustep-gui.so.*

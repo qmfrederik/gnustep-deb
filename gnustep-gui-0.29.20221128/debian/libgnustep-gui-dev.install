@@ -1,0 +1,6 @@
+usr/include/AppKit/
+usr/include/Cocoa/
+usr/include/GNUstepGUI/
+usr/include/gnustep/gui
+usr/lib/libgnustep-gui.so
+usr/share/GNUstep/Makefiles/
