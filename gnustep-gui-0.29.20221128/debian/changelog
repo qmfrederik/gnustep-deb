@@ -1,3 +1,9 @@
+gnustep-gui (0.29.20221128-2) UNRELEASED; urgency=medium
+
+  * Rebuild with gnustep-2.1 runtime 
+
+ -- Frederik Carlier <frederik.carlier@keysight.com>  Mon, 12 Dec 2022 16:34:06 +0000
+
 gnustep-gui (0.29.20221128-1) UNRELEASED; urgency=medium
 
   * Initial release

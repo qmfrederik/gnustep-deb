@@ -4,7 +4,7 @@ Maintainer: Frederik Carlier <frederik.carlier@keysight.com>
 Build-Depends: debhelper-compat (= 13),
                clang,
                pkg-config,
-               gnustep-make,
+               gnustep-make (>= 2.9.0-2),
                libstdc++-11-dev,
                libxml2-dev,
                libgnutls28-dev,
@@ -22,7 +22,9 @@ Package: libgnustep-base-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: libgnustep-base1.28 (= ${binary:Version}), ${misc:Depends}
+Depends: libgnustep-base1.28 (= ${binary:Version}),
+         gnustep-make (>= 2.9.0-2),
+         ${misc:Depends}
 Description: General-purpose, non-graphical Objective C objects.
  The GNUstep Base Library is a library of general-purpose, non-graphical Objective C objects.
 
@@ -32,7 +34,10 @@ Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends}
          libxml2,
+         libgcrypt20,
          libffi8,
-         libxslt1.1
+         libxslt1.1,
+         libicu70,
+         libavahi-client3
 Description: General-purpose, non-graphical Objective C objects.
  The GNUstep Base Library is a library of general-purpose, non-graphical Objective C objects.

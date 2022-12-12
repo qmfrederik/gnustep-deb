@@ -17,6 +17,7 @@ override_dh_auto_configure:
 		--enable-objc-arc \
 		--enable-install-ld-so-conf \
 		--with-library-combo=ng-gnu-gnu \
+	    --with-runtime-abi=gnustep-2.1 \
 
 %:
 	dh $@

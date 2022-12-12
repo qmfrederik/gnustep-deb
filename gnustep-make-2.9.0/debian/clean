@@ -1,0 +1,5 @@
+TestFramework/gnustep-tests
+config-install-p-test-file2
+config-install-p-test.log
+gnustep-make-ld.so.conf
+runtime/ng.make
