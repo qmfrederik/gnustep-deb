@@ -20,13 +20,13 @@ gnustep-make-2.9.0/*
 !gnustep-make-2.9.0/debian/gnustep-make*
 gnustep-make-2.9.0/debian/gnustep-make/
 
-gnustep-base-1.28.20221209*
-!gnustep-base-1.28.20221209
-gnustep-base-1.28.20221209/*
-!gnustep-base-1.28.20221209/debian/
-!gnustep-base-1.28.20221209/debian/gnustep-make*
-gnustep-base-1.28.20221209/debian/libgnustep-base-dev/
-gnustep-base-1.28.20221209/debian/libgnustep-base1.28/
+gnustep-base-1.28.20221211*
+!gnustep-base-1.28.20221211
+gnustep-base-1.28.20221211/*
+!gnustep-base-1.28.20221211/debian/
+!gnustep-base-1.28.20221211/debian/gnustep-make*
+gnustep-base-1.28.20221211/debian/libgnustep-base-dev/
+gnustep-base-1.28.20221211/debian/libgnustep-base1.28/
 
 gnustep-gui-0.29.20221128*
 !gnustep-gui-0.29.20221128

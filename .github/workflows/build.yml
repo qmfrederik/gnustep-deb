@@ -135,9 +135,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - library: gnustep-base-1.28.20221209
-            download: https://github.com/gnustep/libs-base/archive/91108c69c3fbc4f6a71497966c4bab0461265d1b.tar.gz
-            orig: gnustep-base_1.28.20221209
+          - library: gnustep-base-1.28.20221211
+            download: https://github.com/gnustep/libs-base/archive/47b6e9d052498c386cd20aa33059bc998181eacd.tar.gz
+            orig: gnustep-base_1.28.20221211
 
     steps:
     - uses: actions/checkout@v3
@@ -228,8 +228,8 @@ jobs:
         dpkg -i libobjc2_2.1.20220927-1_amd64.deb
         dpkg -i libobjc2-dev_2.1.20220927-1_amd64.deb
         dpkg -i gnustep-make_2.9.0-2_amd64.deb
-        dpkg -i libgnustep-base1.28_1.28.20221209-2_amd64.deb
-        dpkg -i libgnustep-base-dev_1.28.20221209-2_amd64.deb
+        dpkg -i libgnustep-base1.28_1.28.20221211-1_amd64.deb
+        dpkg -i libgnustep-base-dev_1.28.20221211-1_amd64.deb
 
     - name: Download sources
       run: |
