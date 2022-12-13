@@ -12,7 +12,8 @@ Build-Depends: debhelper-compat (= 13),
                libffi-dev,
                libxslt1-dev,
                libicu-dev,
-               libavahi-client-dev
+               libavahi-client-dev,
+               libdispatch-dev
 Standards-Version: 4.6.0
 Section: libs
 Homepage: https://github.com/gnustep/libs-base/
@@ -38,6 +39,7 @@ Depends: ${shlibs:Depends},
          libffi8,
          libxslt1.1,
          libicu70,
-         libavahi-client3
+         libavahi-client3,
+         libdispatch0
 Description: General-purpose, non-graphical Objective C objects.
  The GNUstep Base Library is a library of general-purpose, non-graphical Objective C objects.
