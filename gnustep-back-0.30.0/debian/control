@@ -1,0 +1,25 @@
+Source: gnustep-back
+Priority: optional
+Maintainer: Frederik Carlier <frederik.carlier@keysight.com>
+Build-Depends: debhelper-compat (= 13),
+               clang,
+               pkg-config,
+               gnustep-make,
+               libgnustep-gui-dev,
+               autotools-dev,
+               libfreetype6-dev,
+               libcairo2-dev,
+               libxt-dev
+Standards-Version: 4.6.0
+Section: libs
+Homepage: https://github.com/gnustep/libs-back
+Rules-Requires-Root: no
+
+Package: gnustep-back
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: GNUstep GUI Backend
+ The GNUstep gui library is a library of graphical user interface classes written completely in the Objective-C language;
+ the classes are based upon Apple's Cocoa framework (which came from the OpenStep specification).

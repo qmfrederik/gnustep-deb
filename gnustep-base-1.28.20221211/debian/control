@@ -40,6 +40,7 @@ Depends: ${shlibs:Depends},
          libxslt1.1,
          libicu70,
          libavahi-client3,
-         libdispatch0
+         libdispatch0,
+         libobjc2
 Description: General-purpose, non-graphical Objective C objects.
  The GNUstep Base Library is a library of general-purpose, non-graphical Objective C objects.

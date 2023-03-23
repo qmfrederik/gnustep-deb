@@ -268,3 +268,79 @@ jobs:
           *.diff.gz
           *.debian.tar.xz
           *.dsc
+
+  gnustep-back:
+    needs: gnustep-gui
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: ubuntu:22.04
+
+    strategy:
+      matrix:
+        include:
+          - library: gnustep-back-0.30.0
+            download: https://github.com/gnustep/libs-back/releases/download/back-0_30_0/gnustep-back-0.30.0.tar.gz
+            orig: gnustep-back_0.30.0
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/download-artifact@v3
+      with:
+        name: debian
+        
+    - name: Install dependencies
+      run: |
+        apt-get update
+        apt-get install -y devscripts wget equivs
+
+        apt-get install -y libavahi-client3 libicu70 libxml2 libxslt1.1
+        dpkg -i libdispatch0_5.5-1_amd64.deb
+        dpkg -i libdispatch-dev_5.5-1_amd64.deb
+        dpkg -i libobjc2_2.1.20220927-1_amd64.deb
+        dpkg -i libobjc2-dev_2.1.20220927-1_amd64.deb
+        dpkg -i gnustep-make_2.9.0-2_amd64.deb
+        dpkg -i libgnustep-base1.28_1.28.20221211-1_amd64.deb
+        dpkg -i libgnustep-base-dev_1.28.20221211-1_amd64.deb
+        dpkg -i libgnustep-gui0.29_0.29.20221128-2_amd64.deb
+        dpkg -i libgnustep-gui-dev_0.29.20221128-2_amd64.deb
+
+    - name: Download sources
+      run: |
+        wget -nc ${{ matrix.download }} -O ${{ matrix.orig }}.orig.tar.gz
+
+    - name: Install build dependencies
+      working-directory: ${{ matrix.library }}/
+      run: |
+        mk-build-deps -i -t "apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y"
+        rm -f *.deb *.buildinfo *.changes
+
+    - name: pkg-config diagnostics
+      run: |
+        pkg-config --variable pc_path pkg-config
+        ls -l /usr/lib/x86_64-linux-gnu/pkgconfig/
+
+    - name: Build packages
+      working-directory: ${{ matrix.library }}/
+      run: |
+        tar -xvzf ../${{ matrix.orig }}.orig.tar.gz --strip-components=1
+        debuild
+
+    - name: Upload packages
+      uses: actions/upload-artifact@v3
+      with:
+        name: debian
+        path: |
+          *.deb
+
+    - name: Upload package sources
+      uses: actions/upload-artifact@v3
+      with:
+        name: sources
+        path: |
+          *.orig.tar.gz
+          *.diff.gz
+          *.debian.tar.xz
+          *.dsc
